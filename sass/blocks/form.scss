@@ -1,0 +1,893 @@
+.form {
+  margin-bottom: 150px;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+.form__wrapper {
+  background-color: $blue;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.form__label {
+  font-family: $font-main;
+  font-size: 18px;
+  line-height: 20px;
+  color: $black;
+}
+
+.form__label--white {
+  color: $white;
+}
+
+.form__label--name {
+  font-size: 24px;
+  width: 300px;
+  margin-right: 20px;
+  margin-bottom: 50px;
+}
+
+.form__label--4col {
+  width: 220px;
+  margin-right: 20px;
+}
+
+.form__label--4yellow {
+  width: 200px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+
+.form__label--2yellow {
+  width: 420px;
+}
+
+.form__label--last {
+  margin-right: 0;
+}
+
+.form__label--auto {
+  margin-right: 0;
+  margin-bottom: 40px;
+}
+
+.form__input {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 100%;
+  height: 50px;
+  display: block;
+  border: 1px solid #b6b6b6;
+  border-radius: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: $font-main;
+  font-size: 18px;
+  line-height: 20px;
+  color: $blue;
+  margin: 10px 0 0;
+  outline: 0;
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: $blue;
+  }
+}
+
+.form__input::-ms-clear {
+  display: none;
+}
+
+.form__input--name {
+  font-size: 24px;
+  line-height: 26px;
+  margin-top: 11px;
+}
+
+.form__input::placeholder {
+  text-transform: lowercase;
+  color: $grey;
+  font-size: 28px;
+}
+
+.form__input--required::placeholder {
+  text-transform: lowercase;
+  font-size: 18px;
+}
+
+.form__text-helper {
+  color: $white;
+  opacity: 0.5;
+  font-family: $font-main;
+  font-size: 12px;
+  line-height: 14px;
+  margin-right: 7px;
+}
+
+.form__question-mark {
+  display: inline-block;
+  vertical-align: middle;
+  background: url("../img/icon-question-mark.png") no-repeat;
+  width: 18px;
+  height: 18px;
+}
+
+.form__question-mark:hover + .tooltip {
+  display: block;
+}
+
+.form input,
+.form select {
+  display: block;
+}
+
+.form__personal-details {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.form__required-field {
+  font-family: $font-main;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(70,69,69,0.49);
+}
+
+.form__input--required {
+  margin-bottom: -3px;
+}
+
+.form__input--birthday {
+  width: 220px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 1px;
+}
+
+.form__input--birthday::placeholder {
+  text-align: center;
+}
+.form__input--center {
+  margin: 10px auto;
+}
+
+.form__input--card {
+  text-align: center;
+  max-width: 310px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 24px;
+  line-height: 26px;
+}
+
+.form__address {
+  border-radius: 5px;
+  padding: 10px;
+  background: url("../img/address-pattern.png");
+  margin-bottom: 50px;
+  box-shadow: 0px 8px 27px 0 rgba(190, 165, 4, 0.33);
+}
+.form__address .form__label {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.form__address-wrapper {
+  padding: 20px 36px 40px;
+  background-color: $yellow;
+}
+
+.form__address h2 {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  color: $blue;
+  font-family: $font-tall;
+  font-size: 32px;
+  line-height: 36px;
+  margin-bottom: 25px;
+
+}
+
+.form__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: rgba(0,0,0, 0.75);
+}
+
+.form__input--address {
+  height: 38px;
+  line-height: 38px;
+}
+
+.form__input--street {
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+}
+
+.form__label--2col {
+  width: 49%;
+}
+
+.form__container--flex {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form__label--housename {
+  width: 126px;
+  margin-right: 19px;
+  line-height: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.form__input--housename {
+  width: 100%;
+  height: 38px;
+}
+
+.form__label--private {
+  margin-right: auto;
+  align-self: center;
+  margin-top: 15px;
+}
+
+/*Checkbox customization*/
+
+.form [type="checkbox"] {
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+input.form__checkbox {
+  display: none;
+}
+
+.form__label--check {
+  position: relative;
+  padding-left: 30px;
+}
+
+.form__checkbox + .form__label--check::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 19px;
+  height: 19px;
+  border-radius: 4px;
+  border: 1px solid #b6b6b6;
+  cursor: pointer;
+  background-color: $white;
+  vertical-align: top;
+}
+
+.form__checkbox:checked + .form__label--check::before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  width: 14px;
+  height: 12px;
+  top: 4px;
+  left: 2px;
+  background: url("../img/tick.png") no-repeat;
+  background-position: center;
+}
+
+/**/
+
+.form__policies {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.form__policies h3 {
+  margin: 0;
+  padding: 0;
+  color: $blue;
+  font-family: $font-tall;
+  font-size: 24px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.form__first-link {
+  display: inline-block;
+  width: 53%;
+  outline-color: transparent;
+}
+
+.form__policies a:hover,
+.form__policies a:active {
+  opacity: 0.9;
+}
+
+.form__second-link {
+  display: inline-block;
+  width: 44%;
+}
+
+.form__border {
+  height: 23px;
+  border-left: 2px solid $yellow;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.form__data {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form__label--contact {
+  font-size: 24px;
+  line-height: 26px;
+  width: 460px;
+  margin-bottom: 40px;
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+.form__input--contact {
+  border: 1px solid $black;
+  width: 460px;
+  padding-top: 12px;
+  padding-bottom: 13px;
+  margin-bottom: -5px;
+  font-size: 24px;
+  line-height: 26px;
+
+  &::placeholder {
+    font-size: 24px;
+    line-height: 26px;
+    font-family: $font-main;
+  }
+}
+
+.form__agree {
+  margin-left: 10px;
+  margin-right: 90px;
+}
+
+.form__agree a {
+  text-decoration: underline;
+}
+
+.form__agree a:hover,
+.form__agree a:active {
+  text-decoration: none;
+}
+
+.form__label--agree {
+  position: relative;
+  margin-bottom: 30px;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.form__terms-and-conditions {
+  margin: 0;
+  padding: 0;
+  font-family: $font-main;
+  font-size: 12px;
+  text-align: justify;
+}
+
+.form__terms-and-conditions--last {
+  margin-bottom: 3px;
+}
+
+.form__container--space {
+  justify-content: space-between;
+}
+
+.form__underline {
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+.form__date,
+.form__sign {
+  font-family: $font-main;
+  font-size: 16px;
+}
+
+.form__date time {
+  margin-left: 5px;
+  text-decoration: underline;
+  margin-right: auto;
+}
+
+.form__sign {
+  position: relative;
+  align-self: flex-start;
+  margin-left: auto;
+}
+
+.form__question-mark--grey {
+  background: url("../img/icon-question-mark-grey.png") no-repeat;
+  margin-left: 5px;
+}
+
+.form__container--space {
+  justify-content: space-between;
+}
+
+.form__container--left {
+  justify-content: flex-start;
+}
+
+.form__official {
+  margin-bottom: 80px;
+}
+
+.form__send {
+  display: block;
+  width: 304px;
+  height: 73px;
+  border-radius: 5px;
+  border: none;
+  color: $white;
+  background-color: $blue;
+  font-family: $font-main;
+  font-size: 30px;
+  margin: 0 auto 25px;
+  cursor: pointer;
+}
+
+.form__send:hover,
+.form__send:active {
+  opacity: 0.9;
+}
+
+.form__reset {
+  color: $blue;
+  text-decoration: underline;
+  font-family: $font-main;
+  font-size: 18px;
+  line-height: 20px;
+  background-color: transparent;
+  border: none;
+  margin: 0 auto;
+  cursor: pointer;
+  display: block;
+}
+
+.form__reset:hover,
+.form__reset:active {
+  text-decoration: none;
+}
+
+.form__agreement,
+.form__terms-and-conditions--hidden {
+  display: none;
+}
+
+.form__terms-and-conditions--hidden {
+  margin-bottom: 30px;
+}
+
+.form__agreement {
+  font-size: 14px;
+}
+.form__tooltip {
+  position: relative;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.form__personal-details h2,
+.form__contacts h2,
+.form__official h2 {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+.form__personal-details h2:focus,
+.form__contacts h2:focus,
+.form__official h2:focus {
+  position:static;
+  width:auto;
+  height:auto;
+}
+
+.form__popup-holder {
+  position: absolute;
+  overflow: hidden;
+  height: 0;
+}
+
+.form__label--4yellow {
+  margin-bottom: 25px;
+}
+
+.form__container--margin {
+  margin-bottom: 20px;
+}
+.form__hidden {
+  flex-grow: 1;
+  visibility: hidden;
+}
+
+.form__input--birthday::placeholder {
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.form__labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px)and (max-width: 979px) {
+  .form__input--contact {
+    width: 259px;
+  }
+
+  .form__label--last {
+    margin-right: 20px;
+  }
+
+  .form__label--name {
+    width: 46%;
+    margin-bottom: 45px;
+  }
+  .form__input--name {
+    width: 100%;
+  }
+
+  .form__input--full-width {
+    width: 100%;
+  }
+  .form__wrapper {
+    margin-bottom: 0;
+  }
+
+  .form__input--birthday {
+    width: 100%;
+  }
+  .form__label--4col {
+    width: 46%;
+    margin-right: 20px;
+  }
+  .form__label--second {
+    margin-right: 0;
+  }
+  .form__label--auto {
+    margin-bottom: 10px;
+  }
+
+  .form__label--row-1 {
+    margin-bottom: 50px;
+  }
+  .form__label--4yellow {
+    width: 45%;
+    margin-bottom: 30px;
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+  .form__label--contact {
+    margin-bottom: 30px;
+    width: auto;
+  }
+  .form__label--2yellow {
+    width: 95%;
+    margin-right: 20px;
+  }
+  .form__label--private {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .form__label--housename {
+    width: 29%;
+  }
+  .form__policies {
+    text-align: center;
+  }
+
+  .form__policies a{
+    margin-bottom: 10px;
+  }
+  .form__border {
+    margin: 7px auto 14px;
+    display: block;
+    border-left: none;
+    border-bottom: 2px solid $yellow;
+    width: 240px;
+    height: 2px;
+  }
+  .form__label--agree {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+
+  .form__agree {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .form__label--full-width {
+    width: 100%;
+  }
+
+  .form__agreement,
+  .form__terms-and-conditions--hidden {
+    display: block;
+  }
+  .form__agreement {
+    font-size: 16px;
+  }
+  .form__policies {
+    flex-direction: column;
+  }
+  .form__policies a {
+    width: 100%;
+  }
+  .form__container--left {
+    position: relative;
+  }
+  .form__label--hidden {
+    position: absolute;
+    left: -9999px;
+    right: -9999px;
+  }
+  .form__policies {
+    margin-bottom: 45px;
+  }
+
+  .form {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width:767px) {
+  .form__label--name,
+  .form__label--4col {
+    margin-right: 0;
+    width: 100%;
+  }
+  .form__label--4col {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .form__input--birthday {
+    width: 100%;
+  }
+  .form__address h2 {
+    font-size: 26px;
+  }
+  .form__label {
+    font-size: 16px;
+  }
+  .form__label--4yellow {
+    margin-right: 0;
+  }
+  .form__address-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .form__container--margin {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  .form__label--4yellow {
+    width: 100%;
+  }
+  .form__label--2yellow {
+    width: 100%;
+  }
+  .form__label--private {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .form__label--housename {
+    width: 28%;
+    margin-right: 15px;
+  }
+  .form__label--last-l {
+    margin-right: 0;
+  }
+  .form__policies {
+    text-align: center;
+  }
+  .form__policies h3 {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+    font-size: 24px;
+    line-height: 27px;
+  }
+  .form__border {
+    display: inline-block;
+    margin: 15px auto;
+    border-left: none;
+    border-bottom: 3px solid $yellow;
+    width: 80px;
+    height: 2px;
+  }
+  .form__label--contact {
+    width: 100%;
+  }
+  .form__input--contact {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 20px;
+
+    &::placeholder {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+  .form__contacts {
+    flex-direction: column;
+  }
+  .form__container--space {
+    flex-direction: column;
+  }
+  .form__underline {
+    display: block;
+    margin-left: 0;
+    margin-right: 15px;
+  }
+  .form__date,
+  .form__sign {
+    font-size: 18px;
+  }
+  .form__sign {
+    margin-left: 0;
+  }
+  .form__date {
+    margin-bottom: 10px;
+  }
+
+  .form__container--space {
+    position: relative;
+  }
+  .form__question-mark--grey {
+    position: absolute;
+    bottom: 0;
+  }
+  .form__label--white {
+    font-size: 12px;
+  }
+  .form__text-helper {
+    font-size: 10px;
+  }
+  .form__wrapper {
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+  .form__personal-details {
+    padding-top: 10px;
+    margin-bottom: 0;
+  }
+  .form__label--name {
+    margin-bottom: 20px;
+  }
+  .form__address h2 {
+    margin-bottom: 0;
+  }
+  .form__address {
+    margin-bottom: 20px;
+  }
+  .form__policies {
+    margin-bottom: 20px;
+  }
+  .form__label--contact {
+    margin-bottom: 0;
+  }
+
+  .form__agreement,
+  .form__terms-and-conditions--hidden {
+    display: block;
+  }
+  .form__label--agree {
+    margin-bottom: 10px;
+  }
+
+  .form__send {
+    width: 100%;
+    max-width: 304px;
+    height: 73px;
+    font-size: 28px;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+
+  .form__reset {
+    font-size: 20px;
+  }
+  .form__policies {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .form__policies a {
+    width: 100%;
+  }
+  .form__container--left {
+    position: relative;
+  }
+  .form__label--hidden {
+    position: absolute;
+    left: -9999px;
+    right: -9999px;
+  }
+  .form__agree {
+    margin-right: 10px;
+  }
+  .form__policies {
+    margin-bottom: 45px;
+  }
+  .form {
+    margin-bottom: 60px;
+  }
+  .form__required-field--contacts {
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+  .form__official {
+    margin-bottom: 55px;
+  }
+  .form__terms-and-conditions {
+    font-size: 14px;
+  }
+  .form__terms-and-conditions--last {
+    margin-bottom: 15px;
+  }
+  .form__input--birthday::placeholder {
+    text-align: left;
+    font-size: 21px;
+  }
+  .form__container--flex {
+    justify-content: space-between;
+    align-content: space-between;
+  }
+  .form__hidden {
+    flex-grow: 0;
+  }
+  .form__agreement {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+}
+
+/*Styles required for validation purposes*/
+.form__label.form__label--not-filled {
+  color: $red;
+}
+
+.form__input--not-filled {
+  border: 1px solid $red;
+}
+
+.form__required-field--not-filled {
+  color: $red;
+}
+/**/

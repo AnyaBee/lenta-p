@@ -1,0 +1,173 @@
+.bank-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bank-cards__item {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  text-align: center;
+  width: 305px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &--not_active {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 191px;
+      background-color: rgba(0, 0, 0, 0.17);
+      border-radius: 9px;
+    }
+  }
+
+  &--active {
+    &::after {
+      content: none;
+    }
+  }
+
+  &--not_active img {
+    position: relative;
+    box-shadow: 0 9px 24.03px rgba(0, 0, 0, 0.43);
+  }
+
+  &--active img {
+    box-shadow: 0 4px 6.72px 0.28px rgba(0, 0, 0, 0.43);
+  }
+}
+
+.bank-cards__item img {
+  border-radius: 10px;
+  margin-bottom: 35px;
+}
+
+.bank-cards__offer {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-family: $font-tall;
+  text-transform: uppercase;
+  color: #b1b1b1;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 50px;
+  padding-left: 41px;
+  padding-right: 41px;
+}
+
+.bank-cards [type="radio"] {
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+.bank-cards [type="radio"]:checked + .bank-cards__fake-radio::before {
+  opacity: 1;
+}
+
+.bank-cards [type="radio"]:checked ~ .bank-cards__offer {
+  color: $blue;
+}
+
+.bank-cards__fake-radio {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  border-radius: 4px;
+  border: 1px solid $grey;
+  position: relative;
+  cursor: pointer;
+  background-color: $white;
+  margin-bottom: 20px;
+}
+
+.bank-cards__fake-radio::before {
+  position: absolute;
+  content: "";
+  width: 14px;
+  height: 12px;
+  top: 2px;
+  left: 1px;
+  opacity: 0;
+  background: url("../img/tick.png")no-repeat;
+  background-position: center center;
+}
+.bank-cards h2 {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+.bank-cards h2:focus {
+  position:static;
+  width:auto;
+  height:auto;
+}
+
+@media (min-width: 768px)and (max-width: 979px) {
+  .bank-cards {
+    margin-bottom: 10px;
+  }
+
+  .bank-cards__offer {
+    padding-left: 41px;
+    padding-right: 41px;
+  }
+}
+
+@media (max-width: 767px) {
+  .bank-cards__item {
+    width: 290px;
+    margin-left: 0;
+    margin-right: 0;
+
+    &--not_active {
+      &::after {
+        width: 100%;
+        height: calc(100% - 118px);
+      }
+    }
+  }
+
+  .bank-cards__offer {
+    margin-top: 5px;
+    font-size: 18px;
+    line-height: 24px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 30px;
+  }
+  .bank-cards__item img {
+    margin-bottom: 10px;
+  }
+  .bank-cards__fake-radio {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1300px) {
+  .bank-cards {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 619px) {
+  .bank-cards__item {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

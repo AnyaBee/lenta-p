@@ -1,0 +1,18 @@
+.centered {
+  margin: 0 auto;
+  max-width: 994px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width:768px)and (max-width: 979px) {
+  .centered {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .centered--header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

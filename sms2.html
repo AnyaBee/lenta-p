@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SMS</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,600&amp;subset=cyrillic" rel="stylesheet">
+</head>
+<body>
+<main>
+    <section class="page-header">
+        <div class="page-header__centered">
+            <a href="#">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="img/logo-mobile.jpg 1x, img/logo-retina.jpg 2x">
+                    <img src="img/logo.jpg" alt="Лента">
+                </picture>
+            </a>
+            <h1>РЕГИСТРАЦИЯ <br class="page-header__line-break">КАРТЫ ПОКУПАТЕЛЯ</h1>
+        </div>
+    </section>
+    <div class="error-block error-block__sms">
+        <h2>Необходимо ввести код из SMS</h2>
+        <label class="error-block__label">
+            <input class="error-block__input" type="text">
+            <a href="#">Отправить код повторно</a>
+        </label>
+        <button class="button">Подтвердить</button>
+    </div>
+</main>
+
+</body>
+</html>

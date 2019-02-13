@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Регистрация карты покупателя</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,600&amp;subset=cyrillic" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <section class="page-header">
+        <div class="page-header__centered">
+          <a href="#">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/logo-mobile.jpg 1x, img/logo-retina.jpg 2x">
+              <img src="img/Logo.png" srcset="img/Logo.png 1x, img/Logo@2x.png 2x" alt="Лента">
+            </picture>
+          </a>
+          <h1>РЕГИСТРАЦИЯ <br class="page-header__line-break">КАРТЫ ПОКУПАТЕЛЯ</h1>
+        </div>
+      </section>
+      <div class="centered centered--header">
+        <section class="bank-cards">
+          <h2>Выбирайте нужную карту</h2>
+          <div class="bank-cards__item bank-cards__item--not_active bank-cards__item--first">
+            <picture>
+              <img src="img/Card-1.png" srcset="img/Card-1.png 1x, img/Card-1@2x.png 2x" alt="bank card">
+            </picture>
+            <label>
+              <input type="radio" name="card-choice" id="myCheck1" onclick="formAppearance()">
+              <span class="bank-cards__fake-radio"></span>
+              <span class="bank-cards__offer">Карта постоянного<br> покупателя</span>
+            </label>
+          </div>
+          <div class="bank-cards__item bank-cards__item--not_active bank-cards__item--second">
+            <picture>
+              <img src="img/Card-2.png" srcset="img/Card-2.png 1x, img/Card-2@2x.png 2x" alt="bank card">
+            </picture>
+            <label>
+              <input type="radio" name="card-choice" id="myCheck2" onclick="formAppearance()">
+              <span class="bank-cards__fake-radio"></span>
+              <span class="bank-cards__offer">банковская карта<br> ЛЕНТА-Райффайзенбанк</span>
+            </label>
+          </div>
+        </section>
+      </div>
+      <form class="form" id="form">
+        <div class="form__wrapper">
+          <div class="centered">
+            <label class="form__label form__label--white">Введите Ваш номер карты<input class="form__input form__input--center form__input--card" type="text" maxlength="12" placeholder="0000 0000 0000">
+            </label>
+            <div class="form__tooltip">
+              <span class="form__text-helper">7 либо 12 цифр</span>
+              <a href="#" class="form__question-mark"></a>
+              <!--tooltip
+              <div class="tooltip">
+                <div class="tooltip__wrapper">
+                  <div class="tooltip__arrow"></div>
+                  <div class="tooltip__img-holder">
+                    <img class="tooltip__image" src="img/card1.jpg" width="180" height="112" alt="Card image">
+                    <img class="tooltip__img-help" src="img/card-question-mark.png" width="109" height="109" alt="card help image">
+                  </div>
+                  <p>Номер карты  находится на лицевой стороне карты и/или на штрих-коде на оборотной стороне. </p>
+                </div>
+              </div>
+              -->
+              <div class="tooltip">
+                <div class="tooltip__wrapper">
+                  <div class="tooltip__arrow"></div>
+                  <div class="tooltip__img-holder">
+                    <img class="tooltip__image" src="img/card2.jpg" width="180" height="112" alt="Card image">
+                    <img class="tooltip__img-help" src="img/card-question-mark-2.png" width="109" height="109" alt="card help image">
+                  </div>
+                  <p>Для банковских карт ЛЕНТА-Райффайзенбанк номер карты ЛЕНТА находится на штрих-коде на оборотной стороне карты.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="centered">
+          <section class="form__personal-details">
+            <h2>Введите свои личные данные</h2>
+            <label class="form__label form__label--required form__label--name form__label--full-width">Фамилия*
+              <input class="form__input form__input--required form__input--name form__input--full-width" type="text" required>
+              <span class="form__required-field">*Обязательное к заполнению поле</span>
+            </label>
+            <label class="form__label form__label--required form__label--name">Имя*
+              <input class="form__input form__input--required form__input--name" type="text" required>
+              <span class="form__required-field">*Обязательное к заполнению поле</span>
+            </label>
+            <label class="form__label form__label--name form__label--last">Отчество
+              <input class="form__input form__input--name" type="text">
+            </label>
+            <label class="form__label form__label--required form__label--4col">Дата рождения*
+              <input class="form__input form__input--required form__input--birthday" type="text" id="date" placeholder="ДД . ММ . ГГГГ" required>
+              <span class="form__required-field">*Обязательное к заполнению поле</span>
+            </label>
+            <label for="state" class="form__label form__label--4col form__label--row-1">Пол
+              <select class="form__select" name="state" id="state">
+                <option class="form__option" selected disabled>Выбрать</option>
+                <option class="form__option">Мужской</option>
+                <option class="form__option">Женский</option>
+              </select>
+            </label>
+            <label class="form__label form__label--4col">Семейное положение
+              <select class="form__select">
+                <option class="form__option" selected disabled>Выбрать</option>
+                <option class="form__option">Холост/не замужем</option>
+                <option class="form__option">Женат/замужем</option>
+              </select>
+            </label>
+            <label class="form__label form__label--4col form__label--auto">У вас есть автомобиль?
+              <select class="form__select">
+                <option class="form__option" selected disabled>Выбрать</option>
+                <option class="form__option">Да</option>
+                <option class="form__option">Нет</option>
+              </select>
+            </label>
+          </section>
+          <section class="form__address">
+            <div class="form__address-wrapper">
+              <h2>адрес:</h2>
+              <div class="form__container form__container--margin form__labels">
+                <label class="form__label form__label--4yellow">Страна
+                  <input class="form__input form__input--address" type="text">
+                </label>
+                <label class="form__label form__label--4yellow form__label--required">Область*
+                  <input class="form__input form__input--address form__input--required" type="text" required>
+                  <span class="form__required-field">*Обязательное поле</span>
+                </label>
+                <label class="form__label form__label--4yellow">Город
+                  <input class="form__input form__input--address" type="text">
+                </label>
+                <label class="form__label form__label--4yellow form__label--last">Почтовый индекс
+                  <input class="form__input form__input--address" type="text">
+                </label>
+                <label class="form__label form__label--4yellow">Район города
+                  <input class="form__input form__input--address" type="text">
+                </label>
+                <label class="form__label form__label--4yellow">Населенный пункт
+                  <input class="form__input form__input--address" type="text">
+                </label>
+                <label class="form__label form__label--2yellow">Улица
+                  <input class="form__input form__input--street" type="text">
+                </label>
+              </div>
+              <div class="form__container form__container--flex">
+                <input id="private" type="checkbox" class="form__checkbox  form__checkbox--agree">
+                <label for="private" class="form__label form__label--check form__label--private">Частный сектор</label>
+                <div class="form__labels">
+                  <label class="form__label form__label--housename">Дом
+                    <input class="form__input form__input--housename" type="text">
+                  </label>
+                  <label class="form__label form__label--housename">Корпус
+                    <input class="form__input form__input--housename" type="text">
+                  </label>
+                  <label class="form__label form__label--housename form__label--last-l">Квартира
+                    <input class="form__input form__input--housename" type="text">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="form__policies">
+            <a class="form__first-link" data-fancybox data-src="#popup-1" href="javascript:;">
+              <h3>Политика в области обработки персональных данных</h3>
+            </a>
+            <div class="form__popup-holder">
+              <div class="popup" id="popup-1">
+                <div class="popup__holder jcf-scrollable">
+                  <h3>Политика в области обработки персональных данных</h3>
+                  <div class="popup-text-holder">
+                      <p>Я, Иванов, даю согласие на получение информации (в том числе рекламной) от «ЛЕНТЫ», а также принимаю решение о предоставлении своих персональных данных ООО «Лента», ИНН 7814148471, 197374, г. Санкт-Петербург, ул. Савушкина, д. 112, лит. Б. и даю согласие свободно, своей волей и в своем интересе на обработку без использования средств автоматизации или с использованием таких средств, в том числе на сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу (предоставление, доступ, в том числе и другим компаниям, связанным с ООО «Лента» договорными отношениями), обезличивание, блокирование, удаление, уничтожение моих персональных данных, указанных в настоящей Анкете, в целях реализации программы лояльности с использованием карты постоянного покупателя (идентификация участника программы, обеспечение процедуры учета накопления и использования бонусных баллов, распространения рекламных сообщений, в том числе, о проводимых акциях и специальных предложениях, продвижения товаров, работ, услуг на рынке путем осуществления прямых контактов с потенциальным потребителем с помощью средств связи), статистических расчетах и для анализа истории произведенных покупок (по району проживания покупателей, ассортименту приобретаемых товаров, возрастной ассортименту приобретаемых товаров, возрастной категории покупателей определенных товаров и т.д.), изучения потребительского спроса и получения обратной связи о работе ООО «Лента».</p>
+                      <p>Я даю согласие на поручение обработки моих персональных данных другим компаниям, связанным с ООО «Лента» договорными отношениями, в случае обеспечения ими конфиденциальности переданных им персональных данных и применения мер по защите моих персональных данных в соответствии со ст. 19 Федерального закона от 27.07.2006 г. №152-ФЗ «О персональных данных», а также информировании меня о факте передачи данных в устной или письменной форме с указанием информации о названии и местонахождении такой компании, а также целях и предполагаемых способах обработки моих персональных данных. Настоящее согласие носит бессрочный характер и может быть отозвано посредством личного обращения или направления письменного заявления в адрес ООО «Лента»: 197374, г. Санкт-Петербург, ул. Савушкина, д. 112, лит. Б.</p>
+                      <p>Я Иванов, даю согласие на получение информации (в том числе рекламной) от «ЛЕНТЫ», а также принимаю решение о предоставлении своих персональных данных ООО «Лента», ИНН 7814148471, 197374, г. Санкт-Петербург, ул. Савушкина, д. 112, лит. Б. и даю согласие свободно, своей волей и в своем интересе на обработку без использования средств автоматизации или с использованием таких средств, в том числе на сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу (предоставление, доступ, в том числе и другим компаниям, связанным с ООО «Лента» договорными отношениями), обезличивание, блокирование, удаление, уничтожение моих персональных данных, указанных в настоящей Анкете, в целях реализации программы лояльности с использованием карты постоянного покупателя (идентификация участника программы, обеспечение процедуры учета накопления и использования бонусных баллов, распространения рекламных сообщений, в том числе, о проводимых акциях и специальных предложениях, продвижения товаров, работ, услуг на рынке путем осуществления прямых контактов с потенциальным потребителем с помощью средств связи), статистических расчетах и для анализа истории произведенных покупок (по району проживания покупателей, ассортименту приобретаемых товаров, возрастной ассортименту приобретаемых товаров, возрастной категории покупателей определенных товаров и т.д.), изучения потребительского спроса и получения обратной связи о работе ООО «Лента».</p>
+                      <p>Я даю согласие на поручение обработки моих персональных данных другим компаниям, связанным с ООО «Лента» договорными отношениями, в случае обеспечения ими конфиденциальности переданных им персональных данных и применения мер по защите моих персональных данных в соответствии со ст. 19 Федерального закона от 27.07.2006 г. №152-ФЗ «О персональных данных», а также информировании меня о факте передачи данных в устной или письменной форме с указанием информации о названии и местонахождении такой компании, а также целях и предполагаемых способах обработки моих персональных данных. Настоящее согласие носит бессрочный характер и может быть отозвано посредством личного обращения или направления письменного заявления в адрес ООО «Лента»: 197374, г. Санкт-Петербург, ул. Савушкина, д. 112, лит. Б.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="form__border"></span>
+            <a class="form__second-link" href="#">
+                <h3>Соглашение об электронном взаимодействии</h3>
+            </a>
+          </section>
+          <section class="form__contacts">
+            <h2>Укажите свои контактные данные</h2>
+            <div class="form__data">
+              <label class="form__label form__label--contact form__label--required">Мобильный телефон*
+                <input class="form__input form__input--contact form__input--required" type="tel" id="phone" placeholder="(***)***-**-**" required>
+                <span class="form__required-field form__required-field--contacts">*Обязательное к заполнению поле</span>
+              </label>
+              <label class="form__label form__label--contact form__label--required">Электронная почта*
+                <input class="form__input form__input--contact form__input--required" type="email" placeholder="example@mail.ru" required>
+                <span class="form__required-field form__required-field--contacts">*Обязательное к заполнению поле</span>
+              </label>
+            </div>
+          </section>
+          <section class="form__official">
+            <h2>Условия</h2>
+            <div class="form__container form__container--left">
+              <input id="agree-1" type="checkbox" class="form__checkbox  form__checkbox--agree">
+              <label for="agree-1" class="form__label form__label--check form__label--agree form__agree">Согласие на участие в опросах</label>
+              <input id="agree-2" type="checkbox" class="form__checkbox  form__checkbox--agree">
+              <label for="agree-2" class="form__label form__label--check form__label--agree form__agree">Отправлять чеки на E-mail</label>
+            </div>
+            <div class="form__container form__container--left">
+              <input id="agree-3" type="checkbox" class="form__checkbox  form__checkbox--agree">
+              <label for="agree-3" class="form__label form__label--check form__label--agree form__label--full-width form__agree">Я присоединяюсь к условиям <a href="#">Соглашения об электронном взаимодействии</a></label>
+              <p class="form__agreement">Заполняя анкету вы даете согласие на получение информации (в том числе рекламной) от "ЛЕНТЫ"</p>
+              <p class="form__terms-and-conditions form__terms-and-conditions--hidden">Отказаться от получения информации вы можете по телефону горячей линии 8-800-700-4-111 (звонок по России бесплатный)</p>
+            </div>
+            <p class="form__terms-and-conditions">Я, Иванов _______________, даю согласие на получение информации (в том числе рекламной) от «ЛЕНТЫ», а также принимаю решение о предоставлении своих персональных данных ООО «Лента», ИНН 7814148471, 197374, г. Санкт-Петербург, ул. Савушкина, д. 112, лит. Б. и даю согласие свободно, своей волей и в своем интересе на обработку без использования средств автоматизации или с использованием таких средств, в том числе на сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу (предоставление, доступ, в том числе и другим компаниям, связанным с ООО «Лента» договорными отношениями), обезличивание, блокирование, удаление, уничтожение моих персональных данных, указанных в настоящей Анкете, в целях реализации программы лояльности с использованием карты постоянного покупателя (идентификация участника программы, обеспечение процедуры учета накопления и использования бонусных баллов, распространения рекламных сообщений, в том числе, о проводимых акциях и специальных предложениях, продвижения товаров, работ, услуг на рынке путем осуществления прямых контактов с потенциальным потребителем с помощью средств связи), статистических расчетах и для анализа истории произведенных покупок (по району проживания покупателей, ассортименту приобретаемых товаров, возрастной ассортименту приобретаемых товаров, возрастной категории покупателей определенных товаров и т.д.), изучения потребительского спроса и получения обратной связи о работе ООО «Лента».</p>
+            <p class="form__terms-and-conditions form__terms-and-conditions--last">Я даю согласие на поручение обработки моих персональных данных другим компаниям, связанным с ООО «Лента» договорными отношениями, в случае обеспечения ими конфиденциальности переданных им персональных данных и применения мер по защите моих персональных данных в соответствии со ст. 19 Федерального закона от 27.07.2006 г. №152-ФЗ «О персональных данных», а также информировании меня о факте передачи данных в устной или письменной форме с указанием информации о названии и местонахождении такой компании, а также целях и предполагаемых способах обработки моих персональных данных. Настоящее согласие носит бессрочный характер и может быть отозвано посредством личного обращения или направления письменного заявления в адрес ООО «Лента»: 197374, г. Санкт-Петербург, ул. Савушкина, д. 112, лит. Б.</p>
+            <div class="form__container form__container--space">
+              <span class="form__date">Дата<time datetime="2018-02-02">02.02.2018</time></span>
+              <span class="form__sign">Подпись
+                <span class="form__underline">используется простая цифровая подпись<a href="#" class="form__question-mark form__question-mark--grey"></a></span>
+              </span>
+            </div>
+          </section>
+          <button type="submit" class="form__send">Отправить</button>
+          <button type="reset" class="form__reset">Очистить форму</button>
+        </div>
+      </form>
+    </main>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+    <script type="text/javascript" src="js/custom-form.js"></script>
+    <script type="text/javascript" src="js/form.js"></script>
+    <script type="text/javascript" src="js/fancybox.js"></script>
+    <script src="js/jquery.maskedinput.min.js" type="text/javascript"></script>
+    <script>
+      $(document).ready(function() {
+        $("#phone").mask("(999)999-99-99");
+        $("#date").mask("99.99.9999");
+      });
+    </script>
+  </body>
+</html>
